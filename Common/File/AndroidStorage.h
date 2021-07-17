@@ -29,6 +29,7 @@ bool Android_RemoveFile(const std::string &fileUri);
 bool Android_GetFileInfo(const std::string &fileUri, File::FileInfo *info);
 int64_t Android_GetFreeSpaceByContentUri(const std::string &uri);
 int64_t Android_GetFreeSpaceByFilePath(const std::string &filePath);
+bool Android_IsExternalStoragePreservedLegacy();
 
 std::vector<File::FileInfo> Android_ListContentUri(const std::string &uri);
 
@@ -46,6 +47,7 @@ inline bool Android_RemoveFile(const std::string &fileUri) { return false; }
 inline bool Android_GetFileInfo(const std::string &fileUri, File::FileInfo *info) { return false; }
 inline int64_t Android_GetFreeSpaceByContentUri(const std::string &uri) { return -1; }
 inline int64_t Android_GetFreeSpaceByFilePath(const std::string &filePath) { return -1; }
+inline bool Android_IsExternalStoragePreservedLegacy() { return false; }
 inline std::vector<File::FileInfo> Android_ListContentUri(const std::string &uri) {
 	return std::vector<File::FileInfo>();
 }
